@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+header.nav {
+  font-family: "Noto Sans KR", sans-serif;
+  background: black;
+  position: relative;
+  max-width: 1200px;
+  min-width: 240px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header.nav .Login {
+  color: #88622b;
+  height: 60px;
+  font-size: 36px;
+  line-height: 60px;
+  padding: 0 20px;
+  text-align: center;
+  box-sizing: border-box;
+  float: left;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+header.nav nav {
+  float: right;
+}
+
+header.nav .clearfix {
+  clear: both;
+}
+
+header.nav nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header.nav nav ul li {
+  list-style: none;
+}
+
+header.nav nav ul li a {
+  display: block;
+  margin: 10px 3px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #cdbe91;
+}
+
+header.nav nav ul li a.active {
+  color: #fff7df;
+  border-style: solid;
+  margin: 7px 0;
+  border-image: linear-gradient(0.25turn, #2b271f, #cabb8f, #2b271f) 1;
+  border-image-width: 0 0 3px 0;
+}
+
+header.nav nav ul li a:hover {
+  color: #fff7df;
+}
+
+@media (max-width: 540px) {
+  header.nav .menu {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    float: right;
+    cursor: pointer;
+    background: url("../imgs/menu.png");
+    background-size: contain;
+  }
+  header.nav .arrow {
+    background: url("../imgs/arrow.png");
+    background-size: contain;
+  }
+
+  header.nav {
+    height: 80px;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+
+  header.open {
+    height: 130px;
+  }
+  header.nav nav.open ul {
+    display: block;
+  }
+  header.nav nav.open li {
+    margin: 0;
+    width: fit-content;
+  }
+}

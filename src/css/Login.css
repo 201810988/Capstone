@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 
+html {
+  background: #557085;
+}
+
 section#login {
   margin: 0;
   padding: 0;
@@ -7,29 +11,41 @@ section#login {
   font-family: "Noto Sans KR", sans-serif;
   position: relative;
   min-height: 100vh;
-  background: #557085;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   transition: 0.5s;
 }
 
-section#login .login_container {
-  position: relative;
-  width: 800px;
-  height: 500px;
-  background: #fff;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 1);
+@media (min-width: 320px) {
+  section#login .login_container {
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 1);
+  }
+}
+
+@media (min-width: 600px) {
+  section#login .login_container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 1);
+  }
 }
 
 section#login .login_user_signinBx {
   position: absolute;
+  min-height: 240px;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
 }
 
 section#login .login_container .login_user_signinBx .login_imgBx {
@@ -46,17 +62,18 @@ section#login .login_container .login_user_signinBx img#login_back {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s;
 }
 
 section#login .login_container .login_user_signinBx .login_formBx {
-  position: relative;
   width: 50%;
-  height: 80%;
+  height: 100%;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 0% 10%;
   transition: 0.5s;
 }
 
@@ -67,20 +84,21 @@ section#login .login_container .login_user_signinBx .login_formBx h2 {
   letter-spacing: 2px;
   text-align: center;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 5%;
   color: #555;
 }
 
 section#login .login_container .login_user_signinBx .login_formBx input {
-  width: 100%;
-  padding: 10px;
+  width: 94%;
+  height: 36px;
+  padding: 0% 0% 0% 6%;
   background: #f5f5f5;
   color: #333;
   border: none;
   outline: none;
   box-shadow: none;
   font-size: 14px;
-  margin: 8px 0;
+  margin: 5% 0%;
   letter-spacing: 1px;
   font-weight: 300;
 }
@@ -90,19 +108,19 @@ section#login
   .login_user_signinBx
   .login_formBx
   input[type="submit"] {
-  max-width: 100px;
+  width: 35%;
+  position: relative;
+  padding: 0;
+  left: 65%;
   background: #677eff;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 1px;
   transition: 0.5s;
 }
 
 section#login .login_container .login_user_signinBx .login_formBx .login_p {
-  position: relative;
-  margin-top: 20px;
   font-size: 12px;
   letter-spacing: 1px;
   color: #555;

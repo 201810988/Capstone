@@ -1,30 +1,42 @@
-import "./css/Login.css";
-import back from "./imgs/Aatrox.jpg";
+import Login from "./js/login"
+import Overview from './js/overview';
+import Match from './js/match';
+import Statistics from './js/statistics';
+import Nav from './js/nav';
+import "./css/Back.css"
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  NavLink,
+  useParams,
+} from "react-router-dom";
+import { useState } from 'react';
 
 function App() {
-  return <div className="App">{Login()}</div>;
+  let [name, setName] = useState("");
+  return (
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/overview/:name"><Back c1={<Nav name={name}/>} c2={<Overview/>}/></Route>
+          <Route path="/match"><Back c1={<Nav name={name}/>} c2={<Match/>}/></Route>
+          <Route path="/stat"><Back c1={<Nav name={name}/>} c2={<Statistics/>}/></Route>
+          <Route path="/"><Login setName={setName}/></Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
-function Login() {
+function Back(props) {
   return (
-    <section id="login">
-      <div className="login_container">
-        <div className="login_user_signinBx">
-          <div class="login_imgBx">
-            <img id="login_back" src={back} alt="Aatrox" />
-          </div>
-          <div class="login_formBx">
-            <form>
-              <h2>Start</h2>
-              <input type="text" placeholder="Username" />
-              <input type="submit" value="Search" />
-              <p class="login_p">
-                상명대학교 캡스톤디자인 2021{" "}
-                <a href="https://github.com/YUNJUSEOK/CapstoneDesign">GitHub</a>
-              </p>
-            </form>
-          </div>
-        </div>
+    <section id="back">
+      <div className="back_container">
+        {props.c1}
+        {props.c2}
       </div>
     </section>
   );
