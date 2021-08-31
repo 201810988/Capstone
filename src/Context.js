@@ -8,12 +8,10 @@ export let lol = {
   kr_host: 'https://kr.api.riotgames.com/lol',
   cdn: 'https://ddragon.leagueoflegends.com/cdn/11.16.1',
   pw: '2021 SM CAPSTONE',
-  setPW: () => {},
+  // setPW: () => {},
   decryption: (k, p) => {
     return crypto.AES.decrypt(k, p).toString(crypto.enc.Utf8);
   },
-  login: "Loading",
-  setLogin: () => {},
 }
 
 
