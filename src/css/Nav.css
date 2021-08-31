@@ -3,8 +3,6 @@
 header.nav {
   font-family: "Noto Sans KR", sans-serif;
   background: black;
-  position: relative;
-  max-width: 1200px;
   min-width: 240px;
   padding: 10px;
   box-sizing: border-box;

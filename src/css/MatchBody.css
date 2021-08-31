@@ -1,0 +1,32 @@
+.MatchBox_MatchBody {
+  height: 100px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MatchBox_MatchBody .ItemList {
+  width: 98%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MatchBox_MatchBody .ItemList img {
+  width: 13%;
+  height: auto;
+  border: 1px solid #dcc083;
+}
+
+.MatchBox_MatchBody .List {
+  width: 98%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,32 @@
+.MatchBox_MatchHead {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.MatchBox_MatchHead .Win {
+  font-size: 1.3rem;
+}
+
+.MatchBox_MatchHead .true {
+  color: #0ccae5;
+}
+
+.MatchBox_MatchHead .false {
+  color: #ff2444;
+}
+
+.MatchBox_MatchHead .SpellList {
+  border: 1px solid #dcc083;
+  width: fit-content;
+  height: 30%;
+}
+
+.MatchBox_MatchHead .SpellList img {
+  height: 100%;
+  width: auto;
+}

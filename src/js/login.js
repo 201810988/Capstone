@@ -41,7 +41,7 @@ function Login(props) {
       <div className="login_container">
         <div className="login_user_signinBx">
           <div className="login_imgBx">
-            <img id="login_back"/>
+            <img id="login_back" alt=""/>
           </div>
           <div className="login_formBx">
             <form>

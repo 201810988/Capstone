@@ -1,0 +1,9 @@
+.MatchBox_MatchTail {
+  height: 80px;
+  padding: 10px;
+  color: gray;
+  letter-spacing: 1px;
+}
+.MatchBox_MatchTail :first-child {
+  margin-bottom: 5%;
+}

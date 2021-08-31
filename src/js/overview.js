@@ -1,36 +1,56 @@
-import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
+import { useContext, useEffect } from 'react';
 import {useParams} from "react-router-dom";
+import { Context } from "../Context";
 
-let headers = new Headers();
-headers.append('Access-Control-Allow-Headers', "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range");
-headers.append('X-Riot-Token','RGAPI-c7e0648c-c291-47e7-8374-098ba716c8dc');
-
-
-
-const init = {
-  method: 'GET',
-  headers,
-  mode: 'cors',
-};
+import '../css/Overview.css';
 
 let summoner = null;
 
 function Overview() {
   let { name } = useParams();
+  const lol = useContext(Context);
   useEffect(() => {
-    if(summoner){
-      console.log(summoner);
-    } else {
-      fetch(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}`, init)
+    if(lol.login === "Loading") {
+      const k = lol.decryption(lol.key, lol.pw);
+      fetch(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}/?api_key=${k}`)
         .then(res => res.json())
-        .then(data => console.log(data));
+        .then(data => { 
+          summoner = data 
+          lol.setLogin(true);
+        })
+        .catch(e => {
+          lol.setLogin(false);
+        });
     }
-  }, []);
+    return () => {summoner = null}
+  }, [name, lol]);
+  let result;
+  
+  if(lol.login === "Loading") {
+    result = (
+      <div className="Loading">
+        <FontAwesomeIcon icon={faAsterisk}/>
+      </div>
+    );
+  } else if (lol.login) {
+    result = (
+      <div className="Success">
+
+      </div>
+    );
+  } else {
+    result = (
+      <div className="Error">
+        <h2>죄송합니다. 문제가 발생하였습니다!</h2>
+      </div>
+    );
+  }
   
   return (
-    <div>
-      <h2>Overview</h2>
-      {name}
+    <div className="Overview">
+      {result}
     </div>
   )
 }

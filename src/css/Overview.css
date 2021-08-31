@@ -1,0 +1,23 @@
+.Overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.Overview .Loading {
+  text-align: center;
+  animation: 9s linear 0s infinite normal none running spin;
+  font-size: 5rem;
+  opacity: 0.8;
+  color: #4bd7eb;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
